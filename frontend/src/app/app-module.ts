@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { App } from './app';
 import { PersonaRegistroComponent } from './components/persona-registro/persona-registro';
+import { PersonaListaComponent } from './components/persona-lista/persona-lista';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { PersonaRegistroComponent } from './components/persona-registro/persona-
   imports: [
     BrowserModule,
     FormsModule,
-    PersonaRegistroComponent
+    PersonaRegistroComponent,
+    PersonaListaComponent
   ],
   providers: [],
   bootstrap: [App]

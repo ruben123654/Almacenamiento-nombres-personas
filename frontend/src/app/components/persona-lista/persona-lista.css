@@ -1,0 +1,51 @@
+.lista-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.lista-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.tabla-personas {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-personas th, .tabla-personas td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-personas th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333;
+}
+
+.mensaje-vacio {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}

@@ -1,1 +1,4 @@
-<app-persona-registro></app-persona-registro>
+<div class="app-container">
+  <app-persona-registro (personaAgregada)="agregarPersona($event)"></app-persona-registro>
+  <app-persona-lista [personas]="listaPersonas" (personaEliminada)="eliminarPersona($event)"></app-persona-lista>
+</div>

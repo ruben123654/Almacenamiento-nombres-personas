@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // 👈 Asegúrate de importar FormsModule aquí
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-persona-registro',
-  standalone: true, // 👈 Este flag indica que es standalone
-  imports: [CommonModule, FormsModule], // 👈 Agrega FormsModule aquí dentro
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './persona-registro.html',
   styleUrl: './persona-registro.css'
 })
@@ -16,14 +16,23 @@ export class PersonaRegistroComponent {
     identificacion: ''
   };
 
+  @Output() personaAgregada = new EventEmitter<any>();
+
   registrarPersona() {
-    console.log('Datos a registrar:', this.persona);
-    alert(`Persona registrada con éxito: ${this.persona.nombre} ${this.persona.apellido}`);
-    
-    this.persona = {
-      nombre: '',
-      apellido: '',
-      identificacion: ''
-    };
+    console.log('--- Botón presionado ---');
+    console.log('Valores actuales:', this.persona);
+
+    if (this.persona.nombre && this.persona.apellido && this.persona.identificacion) {
+      this.personaAgregada.emit({ ...this.persona });
+
+      this.persona = {
+        nombre: '',
+        apellido: '',
+        identificacion: ''
+      };
+      console.log('¡Persona enviada con éxito!');
+    } else {
+      alert('Por favor completa todos los campos.');
+    }
   }
 }
